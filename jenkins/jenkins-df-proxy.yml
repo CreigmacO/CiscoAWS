@@ -5,9 +5,11 @@ secrets:
   jenkins-pass:
     external: true
 
+networks:
+  proxy:
+    external: true
 
 services:
-
   main:
     image: creigmac/ciscojenkins:latest
     secrets:
