@@ -20,8 +20,8 @@ services:
           - /var/run/docker.sock:/var/run/docker.sock
     secrets:
       - jenkins-user
-      - source: jenkins-pass
-          mode: 0400
+      - jenkins-pass
+          
 secrets:
     jenkins-user:
       external: true
