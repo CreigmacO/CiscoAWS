@@ -18,9 +18,6 @@ services:
         - com.df.port=8080
     volumes:
           - /var/run/docker.sock:/var/run/docker.sock
-    secrets:
-      - jenkins-user
-      - jenkins-pass
           
 secrets:
     jenkins-user:
