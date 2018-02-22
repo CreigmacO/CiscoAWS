@@ -19,8 +19,14 @@ services:
     volumes:
           - /var/run/docker.sock:/var/run/docker.sock
     secrets:
-       - jenkins-user
-       - jenkins-pass
+      - jenkins-user
+      - source: jenkins-pass
+          mode: 0400
+secrets:
+    jenkins-user:
+      external: true
+    jenkins-pass:
+      external: true
 
 networks:
   proxy:
