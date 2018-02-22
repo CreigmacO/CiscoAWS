@@ -4,6 +4,9 @@ services:
 
   main:
     image: creigmac/ciscojenkins:latest
+    secrets:
+      - jenkins-user
+      - jenkins-pass
     ports:
       - "50000:50000"
     environment:
@@ -18,12 +21,8 @@ services:
         - com.df.port=8080
     volumes:
           - /var/run/docker.sock:/var/run/docker.sock
-    secrets:
-      - jenkins-user
-      - jenkins-pass
-
- secrets:
-    jenkins-user:
-      external: true
-    jenkins-pass:
-      external: true
+secrets:
+  jenkins-user:
+    external: true
+  jenkins-pass:
+    external: true
