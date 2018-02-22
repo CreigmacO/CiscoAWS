@@ -21,8 +21,8 @@ services:
     secrets:
       - jenkins-user
       - jenkins-pass
-              
-secrets:
+
+ secrets:
     jenkins-user:
       external: true
     jenkins-pass:
