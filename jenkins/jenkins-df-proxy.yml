@@ -3,7 +3,7 @@ version: '3'
 services:
 
   main:
-    image: creigmac/ciscojenkins:${TAG:latest}
+    image: creigmac/ciscojenkins:latest
     ports:
       - "50000:50000"
     environment:
