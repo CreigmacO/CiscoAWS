@@ -1,5 +1,3 @@
-docker pipeline:1.15.1
-credentials
 AnsiColor
 script-security
 slack
@@ -10,6 +8,8 @@ git
 github
 swarm
 blueocean
-ec2:1.36
+ec2
 thinBackup
 github-oauth
+docker pipeline
+credentials

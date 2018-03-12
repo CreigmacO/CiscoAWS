@@ -12,3 +12,4 @@ COPY security.groovy /usr/share/jenkins/ref/init.groovy.d/security.groovy
 # Install a list of plugins from the file 'plugins.txt' and their dependencies
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+#RUN wget -P /var/lib/jenkins/plugins https://updates.jenkins-ci.org/download/plugins/git/2.0/git.hpi
