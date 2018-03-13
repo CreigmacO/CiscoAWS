@@ -31,3 +31,6 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
+networks:
+  proxy:
+    external: true
