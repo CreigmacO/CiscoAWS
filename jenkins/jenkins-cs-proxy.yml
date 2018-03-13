@@ -20,7 +20,8 @@ services:
       - JENKINS_OPTS="--prefix=/jenkins"
 
     volumes:
-      - "./var/jenkins_home:/jenkins_home"
+      - "/var/jenkins_home:/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
 
     networks:
       - proxy
