@@ -25,13 +25,13 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
-     resources:
-      reservations:
-          memory: 500M
-        limits:
-          memory: 1000M
+      resources:
+       reservations:
+           memory: 500M
+         limits:
+           memory: 1000M
 
-    volumes:
+     volumes:
         jm:
           driver: cloudstor:aws
           external: false
