@@ -1,11 +1,11 @@
-version: '3'
+version: '3.5'
 
 secrets:
   jenkins-user:
     external: true
   jenkins-pass:
     external: true
-  
+
 
 services:
 
