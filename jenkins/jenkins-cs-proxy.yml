@@ -18,10 +18,12 @@ services:
       - "50000:50000"
     environment:
       - JENKINS_OPTS="--prefix=/jenkins"
+
+    volumes:
+      - "./var/jenkins_home:/jenkins_home"
+
     networks:
       - proxy
-    volumes:
-      - jm:/var/jenkins_home
 
     deploy:
       labels:
@@ -29,7 +31,3 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
-  volumes:
-      jm:
-        driver: cloudstor:aws
-        external: false
