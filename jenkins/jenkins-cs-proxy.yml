@@ -33,6 +33,6 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
-  secrets:
-       jenkins-user
-       jenkins-pass
+    secrets:
+       -jenkins-user
+       -jenkins-pass
