@@ -5,17 +5,7 @@ secrets:
     external: true
   jenkins-pass:
     external: true
-volumes:
-  jm:
-    driver: cloudstor:aws
-    driver_opts:
-       size: "25"
-    external: false
 
-volumes:
-   jmshare:
-     driver: cloudstor:aws
-     external: false
 
 services:
   main:
@@ -38,3 +28,14 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
+    volumes:
+          jm:
+            driver: cloudstor:aws
+            driver_opts:
+               size: "25"
+            external: false
+
+    volumes:
+           jmshare:
+             driver: cloudstor:aws
+             external: false
