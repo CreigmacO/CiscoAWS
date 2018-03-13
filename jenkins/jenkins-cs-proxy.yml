@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3'
 
 secrets:
   jenkins-user:
@@ -32,7 +32,7 @@ services:
     volumes:
       jm:
         driver: cloudstor:aws
-         driver_opts:
+        driver_opts:
            size: "25"
         external: false
 
