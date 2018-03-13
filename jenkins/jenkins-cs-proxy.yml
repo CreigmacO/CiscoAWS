@@ -25,9 +25,10 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
-    volumes:
+  volumes:
         jm:
           driver: cloudstor:aws
           external: false
         jmshare:
           driver: cloudstor:aws
+          external: false
