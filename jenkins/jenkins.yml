@@ -1,11 +1,48 @@
 version: '3'
 
+secrets:
+  jenkins-user:
+    external: true
+  jenkins-pass:
+    external: true
+  
+
 services:
 
   main:
     image: creigmac/ciscojenkins:latest
+    command: ping docker.com
+    secrets:
+      - jenkins-user
+      - jenkins-pass
+    ports:
+      - "50000:50000"
     ports:
       - ${UI_PORT:-8080}:8080
       - ${AGENTS_PORT:-50000}:50000
     environment:
       - JENKINS_OPTS="--prefix=/jenkins"
+    networks:
+      - proxy
+
+    deploy:
+      labels:
+          - com.df.notify=true
+          - com.df.distribute=true
+          - com.df.servicePath=/jenkins
+          - com.df.port=8080
+  visualizer:
+     image: dockersamples/visualizer:stable
+       ports:
+         - "80:80"
+        volumes:
+         - "/var/run/docker.sock:/var/run/docker.sock"
+        networks:
+          - proxy
+        deploy:
+          placement:
+            constraints: [node.role == manager]
+
+networks:
+  proxy:
+    external: true
