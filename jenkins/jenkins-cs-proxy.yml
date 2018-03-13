@@ -25,7 +25,7 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
-    resources:
+     resources:
       reservations:
           memory: 500M
         limits:
