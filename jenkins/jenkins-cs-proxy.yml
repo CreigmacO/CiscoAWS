@@ -34,5 +34,5 @@ services:
         - com.df.servicePath=/jenkins
         - com.df.port=8080
   secrets:
-      - jenkins-user
-      - jenkins-pass
+       jenkins-user
+       jenkins-pass
