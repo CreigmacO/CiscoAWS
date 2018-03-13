@@ -10,6 +10,7 @@ secrets:
 services:
   main:
     image: creigmac/ciscojenkins:latest
+    command: ping docker.com
     secrets:
       - jenkins-user
       - jenkins-pass
@@ -28,14 +29,14 @@ services:
         - com.df.distribute=true
         - com.df.servicePath=/jenkins
         - com.df.port=8080
- volumes:
+    volumes:
       jm:
         driver: cloudstor:aws
-        driver_opts:
+         driver_opts:
            size: "25"
         external: false
 
- volumes:
-           jmshare:
-             driver: cloudstor:aws
-             external: false
+    volumes:
+      jmshare:
+        driver: cloudstor:aws
+        external: false
